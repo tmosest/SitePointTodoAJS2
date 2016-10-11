@@ -29,7 +29,7 @@ describe('Todo Service Injected', () => {
     });
     
     describe('#getAllTodos()', () => {
-    
+        
         it('should return an empty array by default', inject([TodoService], (service: TodoService) => {
             expect(service.getAllTodos()).toEqual([]);
         }));
@@ -37,7 +37,7 @@ describe('Todo Service Injected', () => {
     });
     
     describe('#save(todo)', () => {
-    
+        
         it('should automatically assign an incrementing id', inject([TodoService], (service: TodoService) => {
           let todo1 = new Todo({title: 'Hello 1', complete: false});
           let todo2 = new Todo({title: 'Hello 2', complete: true});

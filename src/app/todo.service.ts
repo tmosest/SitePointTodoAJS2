@@ -39,7 +39,7 @@ export class TodoService {
     }
 
     // Simulate GET /todos
-    getAllTodos(id: number): Todo[] {
+    getAllTodos(): Todo[] {
         return this.todos;
     }
 
