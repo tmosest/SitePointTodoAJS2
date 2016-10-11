@@ -1,30 +1,40 @@
-<section>
-    <header class="header">
+<section class="container-fluid text-center">
+    <header class="header col-xs-12 col-sm-6 col-sm-offset-3">
         <h1>Todos</h1>
-        <h2 *ngIf="newTodo.title">{{newTodo.title}}</h2>
-        <input type="text" 
-               class="new-todo" 
-               placeholder="What needs to be done?" 
-               autofocus=""
-               [(ngModel)]="newTodo.title" 
-               (keyup.enter)="addTodo()" />
+        <div class="form-group">
+            <input 
+                   id="todoInput"
+                   type="text" 
+                   class="form-control new-todo" 
+                   placeholder="What needs to be done?" 
+                   autofocus=""
+                   [(ngModel)]="newTodo.title" 
+                   (keyup.enter)="addTodo()" />
+        </div>
     </header>
-    <section class="main" *ngIf="todos.length > 0">
-        <ul class="todo-list">
-            <li *ngFor="let todo of todos"
+    <section class="main col-xs-12 col-sm-6 col-sm-offset-3" *ngIf="todos.length > 0">
+        <ul class="todo-list list-unstyled">
+            <li *ngFor="let todo of todos; let i = index"
                 [class.completed]="todo.complete">
                 <div class="view">
-                    <input class="toggle" type="checkbox"
-                           (click)="toggleTodoComplete(todo)"
-                           [checked]="todo.complete" />
-                    <label>{{todo.title}}</label>
-                    <button class="destroy"
-                            (click)="removeTodo(todo)"></button>
+                    <div class="checkbox">
+                        <input class="toggle pull-left" type="checkbox"
+                               (click)="toggleTodoComplete(todo)"
+                               [checked]="todo.complete" 
+                               [attr.id]="'checkbox'+i" />
+                        <label [attr.for]="'checkbox'+i"></label>
+                    </div>
+                    <span>{{todo.title}}</span>
+                    <button type="button"
+                            class="btn btn-danger pull-right"
+                            (click)="removeTodo(todo)">
+                        <span class="glyphicon glyphicon-remove"></span>
+                    </button>
                 </div>
             </li>
         </ul>
     </section>
-    <footer class="footer" *ngIf="todos.length > 0">
+    <footer class="footer col-xs-12 col-sm-6 col-sm-offset-3" *ngIf="todos.length > 0">
         <span class="todo-count">
             <strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left 
         </span>

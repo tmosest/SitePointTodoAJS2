@@ -1,0 +1,85 @@
+.header input[type="text"]{
+    height: 70px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.header .form-group {
+    margin-bottom: 0px;
+}
+
+/*
+.main {
+    background-color: #fff;
+    boder: 1px 0px 1px 0px solid lightgrey;
+}
+*/
+.todo-list .view {
+    border-bottom: 1px solid grey;
+    padding: 10px;
+    padding-bottom: 20px;
+}
+
+.todo-list .checkbox input[type="checkbox"] {
+    visibility: hidden;
+}
+
+.todo-list .view .btn-danger {
+    visibility: hidden;
+}
+
+.todo-list .view:hover > .btn-danger {
+    visibility: visible;
+}
+
+.todo-list .view > span {
+    font-size: 27px;
+}
+
+.todo-list .completed .view  > span {
+    color: lightgray;
+    text-decoration: line-through;
+}
+
+.todo-list .checkbox {
+    width: 34;
+	height: 34;
+	background: #ddd;
+	border-radius: 100%;
+    margin-bottom: 1px;
+	position: relative;
+	box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.todo-list .checkbox label {
+	display: inline-block;
+    
+    width: 30px;
+	height: 30px;
+    border: 1px solid lightgray;
+	border-radius: 100px;
+    
+	transition: all .5s ease;
+	cursor: pointer;
+	position: absolute;
+	top: 5px;
+	left: 5px;
+	z-index: 1;
+
+	background: #fff;
+	box-shadow:inset 0px 1px 3px rgba(0,0,0,0.5);
+}
+
+.todo-list .checkbox input[type=checkbox]:checked + label::after, .todo-list .checkbox:hover label::after {
+    display: block;
+    font-family: 'Glyphicons Halflings';
+    content: "\e013";
+    left: -17px;
+    position: relative;
+    font-size: 20px;
+    color: rgba(0,255, 0, 0.75);
+}
+
+.todo-list .checkbox input[type=checkbox]:checked + label::after {
+	color: rgba(0,255, 0, 1);
+}
