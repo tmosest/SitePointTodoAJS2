@@ -16,8 +16,12 @@ export class TodoAppComponent {
   }
 
   addTodo() {
-    this.todoService.addTodo(this.newTodo);
-    this.newTodo = new Todo();
+    if(this.newTodo.title.trim() != '') {
+        this.todoService.addTodo(this.newTodo);
+        this.newTodo = new Todo();    
+    } else {
+        alert("Please fill in the Todo Title");
+    }
   }
 
   toggleTodoComplete(todo) {
