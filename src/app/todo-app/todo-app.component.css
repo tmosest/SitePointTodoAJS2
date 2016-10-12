@@ -2,6 +2,9 @@
     height: 70px;
     font-size: 30px;
     text-align: center;
+    border: 0px solid #ccc;
+    border-bottom: 1px solid lightgrey;
+    border-radius: 0px;
 }
 
 .header .form-group {
@@ -14,7 +17,13 @@
     boder: 1px 0px 1px 0px solid lightgrey;
 }
 */
+
+.todo-list {
+    margin-bottom: 0px;
+}
+
 .todo-list .view {
+    background-color: #fff;
     border-bottom: 1px solid grey;
     padding: 10px;
     padding-bottom: 20px;

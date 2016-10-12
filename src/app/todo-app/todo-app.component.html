@@ -35,8 +35,8 @@
         </ul>
     </section>
     <footer class="footer col-xs-12 col-sm-6 col-sm-offset-3" *ngIf="todos.length > 0">
-        <span class="todo-count">
-            <strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left 
-        </span>
+        <div class="todo-count card">
+            <span><strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+        </div>
     </footer>
 </section>
